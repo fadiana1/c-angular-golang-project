@@ -1,0 +1,92 @@
+<div style="display: flex; gap: 24px; padding: 24px; font-family: sans-serif;">
+  
+  <div style="flex: 2;">
+    <h2 style="margin-top: 0;">📋 Halaman Direktori Karyawan</h2>
+    
+    <div style="margin-bottom: 20px; display: flex; gap: 12px; align-items: center; background: #f5f5f5; padding: 12px; border-radius: 6px;">
+      <input 
+        type="text" 
+        placeholder="Cari nama karyawan..." 
+        [ngModel]="searchTerm()" 
+        (ngModelChange)="searchTerm.set($event)" 
+        style="padding: 8px; flex: 1; border: 1px solid #ccc; border-radius: 4px;"
+      />
+      
+      <select 
+        [ngModel]="selectedDept()" 
+        (ngModelChange)="selectedDept.set($event)"
+        style="padding: 8px; border: 1px solid #ccc; border-radius: 4px;"
+      >
+        <option value="">Semua Departemen</option>
+        <option *ngFor="let dept of departments" [value]="dept">{{ dept }}</option>
+      </select>
+
+      <label style="cursor: pointer; user-select: none; font-size: 14px;">
+        <input 
+          type="checkbox" 
+          [checked]="showInactive()" 
+          (change)="showInactive.set(!showInactive())" 
+        />
+        Tampilkan Karyawan Tidak Aktif
+      </label>
+    </div>
+
+    <table border="1" cellpadding="10" style="width: 100%; border-collapse: collapse; border: 1px solid #ddd; text-align: left;">
+      <thead style="background-color: #007bff; color: white;">
+        <tr>
+          <th>Nama</th>
+          <th>Departemen</th>
+          <th>Posisi</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr 
+          *ngFor="let emp of filteredEmployees()" 
+          (click)="selectEmployee(emp)" 
+          style="cursor: pointer; border-bottom: 1px solid #ddd;"
+          [style.background-color]="selectedEmployee()?.id === emp.id ? '#e6f2ff' : 'transparent'"
+          (mouseover)="$any($event.currentTarget).style.backgroundColor='#f9f9f9'"
+          (mouseout)="$any($event.currentTarget).style.backgroundColor=(selectedEmployee()?.id === emp.id ? '#e6f2ff' : 'transparent')"
+        >
+          <td style="font-weight: bold;">{{ emp.name }}</td>
+          <td>{{ emp.department }}</td>
+          <td>{{ emp.position }}</td>
+          <td>
+            <span [style.color]="emp.active ? 'green' : 'red'" style="font-weight: bold;">
+              {{ emp.active ? '🟢 Aktif' : '🔴 Tidak Aktif' }}
+            </span>
+          </td>
+        </tr>
+        <tr *ngIf="filteredEmployees().length === 0">
+          <td colspan="4" style="text-align: center; color: #777; font-style: italic;">Data karyawan tidak ditemukan.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="flex: 1; border: 1px solid #ccc; padding: 20px; border-radius: 8px; background-color: #fafafa; min-height: 300px;">
+    <h3 style="margin-top: 0; border-bottom: 2px solid #007bff; padding-bottom: 8px;">🔍 Detail Karyawan</h3>
+    
+    <div *ngIf="selectedEmployee(); else noSelection">
+      <p style="margin: 12px 0;"><strong>ID Karyawan:</strong> #{{ selectedEmployee().id }}</p>
+      <p style="margin: 12px 0;"><strong>Nama Lengkap:</strong> {{ selectedEmployee().name }}</p>
+      <p style="margin: 12px 0;"><strong>Departemen:</strong> {{ selectedEmployee().department }}</p>
+      <p style="margin: 12px 0;"><strong>Posisi Kerja:</strong> {{ selectedEmployee().position }}</p>
+      <p style="margin: 12px 0;"><strong>Nomor Telepon:</strong> {{ selectedEmployee().phone }}</p>
+      <p style="margin: 12px 0;">
+        <strong>Status Akun:</strong> 
+        <span [style.color]="selectedEmployee().active ? 'green' : 'red'">
+          {{ selectedEmployee().active ? 'Aktif' : 'Nonaktif' }}
+        </span>
+      </p>
+    </div>
+    
+    <ng-template #noSelection>
+      <p style="color: #666; font-style: italic; text-align: center; margin-top: 80px;">
+        Silakan klik salah satu baris karyawan di tabel untuk melihat detail lengkap.
+      </p>
+    </ng-template>
+  </div>
+
+</div>
