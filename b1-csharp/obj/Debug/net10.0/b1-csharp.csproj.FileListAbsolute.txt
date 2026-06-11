@@ -1,0 +1,14 @@
+D:\bagian-b\b1-csharp\bin\Debug\net10.0\b1-csharp.exe
+D:\bagian-b\b1-csharp\bin\Debug\net10.0\b1-csharp.deps.json
+D:\bagian-b\b1-csharp\bin\Debug\net10.0\b1-csharp.runtimeconfig.json
+D:\bagian-b\b1-csharp\bin\Debug\net10.0\b1-csharp.dll
+D:\bagian-b\b1-csharp\bin\Debug\net10.0\b1-csharp.pdb
+D:\bagian-b\b1-csharp\obj\Debug\net10.0\b1-csharp.GeneratedMSBuildEditorConfig.editorconfig
+D:\bagian-b\b1-csharp\obj\Debug\net10.0\b1-csharp.AssemblyInfoInputs.cache
+D:\bagian-b\b1-csharp\obj\Debug\net10.0\b1-csharp.AssemblyInfo.cs
+D:\bagian-b\b1-csharp\obj\Debug\net10.0\b1-csharp.csproj.CoreCompileInputs.cache
+D:\bagian-b\b1-csharp\obj\Debug\net10.0\b1-csharp.dll
+D:\bagian-b\b1-csharp\obj\Debug\net10.0\refint\b1-csharp.dll
+D:\bagian-b\b1-csharp\obj\Debug\net10.0\b1-csharp.pdb
+D:\bagian-b\b1-csharp\obj\Debug\net10.0\b1-csharp.genruntimeconfig.cache
+D:\bagian-b\b1-csharp\obj\Debug\net10.0\ref\b1-csharp.dll
