@@ -25,9 +25,9 @@ Pastikan posisi terminal Anda berada pada akar direktori utama (`bagian-b/`) seb
 ### Soal B1 — C# (Rekap Absensi Karyawan)
 Program berbasis konsol (*Console Application*) yang memproses kalkulasi log mentah presensi secara sekuensial, menghitung metrik persentase kehadiran, serta mendeteksi anomali tren ketidakhadiran beruntun.
 1. Masuk ke direktori proyek C#:
-   ```bash
    cd b1-csharp
-2. untuk menjalankan progrem, ketik kode dotnet run
+2. untuk menjalankan program, ketik kode
+ dotnet run
 3. Output yang dihasilkan:
 PS D:\bagian-b\b1-csharp> dotnet run
 === REKAP ABSENSI ===
@@ -133,3 +133,5 @@ npm run dev
 [GIN] 2026/06/13 - 14:08:57 | 409 |       0s |             ::1 | POST     "/leave"
 [GIN] 2026/06/13 - 14:15:35 | 200 |       0s |             ::1 | PUT      "/leave/1/approve"
 [GIN] 2026/06/13 - 14:20:33 | 200 |       0s |             ::1 | GET      "/leave/employee/E003"
+
+Link Github: https://github.com/fadiana1/c-angular-golang-project.git
