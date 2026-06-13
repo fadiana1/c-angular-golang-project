@@ -11,6 +11,7 @@ const formData = reactive({
   nik: '',
   birthDate: '',
   gender: '',
+
   // Step 2: Data Pekerjaan
   department: '',
   position: '',
@@ -121,7 +122,7 @@ const formatRupiah = (value) => {
 
 // Submit Akhir
 const submitForm = () => {
-  alert('🎉 Pendaftaran Onboarding Karyawan Baru Berhasil Disubmit!')
+  alert('Pendaftaran Onboarding Karyawan Baru Berhasil Disubmit!')
   // Reset Form kembali ke Step 1
   currentStep.value = 1
   formData.fullName = ''
@@ -137,7 +138,7 @@ const submitForm = () => {
 
 <template>
   <div class="wizard-container">
-    <h2>📋 Form Onboarding Karyawan Baru</h2>
+    <h2>Form Onboarding Karyawan Baru</h2>
 
     <div class="step-indicator">
       <div :class="['step-box', { active: currentStep >= 1 }]">1. Data Pribadi</div>
@@ -184,7 +185,7 @@ const submitForm = () => {
         </div>
 
         <div class="button-group">
-          <button type="button" @click="nextStep" :disabled="!isStep1Valid" class="btn btn-next">Lanjut</button>
+          <button type="button" @click="nextStep" :disabled="!isStep1Valid" class="btn btn-next">Next</button>
         </div>
       </div>
 
@@ -202,7 +203,7 @@ const submitForm = () => {
 
         <div class="form-group">
           <label>Posisi / Jabatan <span class="required">*</span></label>
-          <input type="text" v-model="formData.position" placeholder="Contoh: Software Engineer" />
+          <input type="text" v-model="formData.position" placeholder="Contoh: Database Engineer" />
           <span class="error-msg" v-if="step2Errors.position">{{ step2Errors.position }}</span>
         </div>
 
@@ -214,13 +215,13 @@ const submitForm = () => {
 
         <div class="form-group">
           <label>Gaji Pokok (Rp) <span class="required">*</span></label>
-          <input type="number" v-model.number="formData.baseSalary" placeholder="Minimal 3000000" />
+          <input type="number" v-model.number="formData.baseSalary" placeholder="Minimal 3.000.000" />
           <span class="error-msg" v-if="step2Errors.baseSalary">{{ step2Errors.baseSalary }}</span>
         </div>
 
         <div class="button-group">
-          <button type="button" @click="prevStep" class="btn btn-back">Kembali</button>
-          <button type="button" @click="nextStep" :disabled="!isStep2Valid" class="btn btn-next">Lanjut</button>
+          <button type="button" @click="prevStep" class="btn btn-back">Back</button>
+          <button type="button" @click="nextStep" :disabled="!isStep2Valid" class="btn btn-next">Next</button>
         </div>
       </div>
 
@@ -228,7 +229,7 @@ const submitForm = () => {
         <h3 class="step-title">Step 3 — Review Ringkasan Data</h3>
         
         <div class="review-section">
-          <h4>A. Data Pribadi</h4>
+          <h4>Data Pribadi</h4>
           <table class="review-table">
             <tr><th>Nama Lengkap</th><td>{{ formData.fullName }}</td></tr>
             <tr><th>NIK</th><td>{{ formData.nik }}</td></tr>
@@ -236,7 +237,7 @@ const submitForm = () => {
             <tr><th>Jenis Kelamin</th><td>{{ formData.gender }}</td></tr>
           </table>
 
-          <h4>B. Data Pekerjaan</h4>
+          <h4>Data Pekerjaan</h4>
           <table class="review-table">
             <tr><th>Departemen</th><td>{{ formData.department }}</td></tr>
             <tr><th>Posisi</th><td>{{ formData.position }}</td></tr>
@@ -247,7 +248,7 @@ const submitForm = () => {
 
         <div class="button-group">
           <button type="button" @click="prevStep" class="btn btn-back">⚙️ Edit Data</button>
-          <button type="button" @click="submitForm" class="btn btn-submit">🚀 Submit Data</button>
+          <button type="button" @click="submitForm" class="btn btn-submit">Submit Data</button>
         </div>
       </div>
 
@@ -259,14 +260,14 @@ const submitForm = () => {
 .wizard-container {
   max-width: 650px;
   margin: 30px auto;
-  padding: 0 15px;
+  padding: 10 45px;
   font-family: 'Segoe UI', system-ui, sans-serif;
-  color: #2c3e50;
+  color: #15634d;
 }
 
 h2 {
   text-align: center;
-  color: #41b883;
+  color: #094c3f;
   margin-bottom: 25px;
 }
 
@@ -275,7 +276,8 @@ h2 {
   border-bottom: 2px solid #e2e8f0;
   padding-bottom: 8px;
   color: #2c3e50;
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .step-indicator {
@@ -404,14 +406,14 @@ input:focus, select:focus {
 }
 
 .btn-submit {
-  background-color: #3182ce;
+  background-color: #41b883;
   color: white;
 }
 
 /* Styling Halaman Review */
 .review-section h4 {
   margin: 15px 0 8px 0;
-  color: #3182ce;
+  color: #026448;
   border-left: 3px solid #3182ce;
   padding-left: 6px;
 }
