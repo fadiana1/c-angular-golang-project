@@ -10,11 +10,11 @@ Hasil pengerjaan projek pada soal test yang mencakup test kemampuan logika, API,
 ---
 
 ## 🛠️ Versi Runtime & Environment
-Aplikasi ini dikembangkan dan diuji menggunakan versi lingkungan standar berikut untuk memastikan stabilitas eksekusi:
-* **.NET SDK Ecosystem:** .NET v8.0 / v9.0 (C# 12)
-* **Go Engine Environment:** go1.22 atau versi di atasnya
+Aplikasi ini dikembangkan dan diuji menggunakan versi lingkungan spesifik berikut pada mesin lokal untuk menjamin stabilitas eksekusi:
+* **.NET SDK Ecosystem:** .NET v10.0 (SDK 10.0.300)
+* **Go Engine Environment:** Go v1.26.4 (windows/amd64)
 * **Node.js Environment:** v22.11.0 (LTS)
-* **Package Manager:** npm v10.x / v8.19.1+
+* **Package Manager:** npm v10.9.0
 
 ---
 
